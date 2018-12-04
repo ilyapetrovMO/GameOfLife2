@@ -15,7 +15,7 @@ namespace GameofLife_2
             FillRandomArray();
 
             int n=0;
-            while (n<30)
+            while (n<4)
             {
             CheckSetCase();
 
@@ -23,14 +23,15 @@ namespace GameofLife_2
                 for (int j = 0; j < size_X-1; j++)
                 {
                     if(Evo1[j,i]){
-                       System.Console.Write(" # ");
+                       System.Console.Write("#");
                     }
-                    else {System.Console.Write("   ");}
-                    if (j==size_X-2){System.Console.WriteLine( );}
+                    else {System.Console.Write(" ");}
+                    if (j==size_X-2){System.Console.WriteLine("xxx");}
 
                 }
             }
-            Console.Clear();
+            System.Console.Clear();
+            System.Console.WriteLine("{0}-------------------------------------------------",n);
             n++;
             }
             Console.Read();
@@ -68,7 +69,7 @@ namespace GameofLife_2
                     if (Evo1[X+1,Y]){counter++;}
                     if (Evo1[X+1,Y+1]){counter++;}
                     if (Evo1[X,Y+1]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 1://x>0 && x<size_X y=0
                     if (Evo1[X-1,Y]){counter++;}
@@ -76,13 +77,13 @@ namespace GameofLife_2
                     if (Evo1[X,Y+1]){counter++;}
                     if (Evo1[X+1,Y+1]){counter++;}
                     if (Evo1[X+1,Y]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 2://x=size_X y=0
                     if (Evo1[X-1,Y]){counter++;}
                     if (Evo1[X-1,Y+1]){counter++;}
                     if (Evo1[X,Y+1]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 3://x=0 y>0 && y<size_Y
                     if (Evo1[X,Y-1]){counter++;}
@@ -90,7 +91,7 @@ namespace GameofLife_2
                     if (Evo1[X+1,Y]){counter++;}
                     if (Evo1[X+1,Y+1]){counter++;}
                     if (Evo1[X,Y+1]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 4://x=size_X y>0 && y<size_Y
                     if (Evo1[X,Y-1]){counter++;}
@@ -98,13 +99,13 @@ namespace GameofLife_2
                     if (Evo1[X-1,Y]){counter++;}
                     if (Evo1[X-1,Y+1]){counter++;}
                     if (Evo1[X,Y+1]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 5://x=0 y=size_Y
                     if (Evo1[X,Y-1]){counter++;}
                     if (Evo1[X+1,Y-1]){counter++;}
                     if (Evo1[X+1,Y]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 6://x>0 && x<size_X y=size_Y
                     if (Evo1[X-1,Y]){counter++;}
@@ -112,13 +113,13 @@ namespace GameofLife_2
                     if (Evo1[X,Y-1]){counter++;}
                     if (Evo1[X+1,Y-1]){counter++;}
                     if (Evo1[X+1,Y]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 7://x=size_X y=size_Y
                     if (Evo1[X,Y-1]){counter++;}
                     if (Evo1[X-1,Y-1]){counter++;}
                     if (Evo1[X-1,Y]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
                 case 8:
                     if (Evo1[X,Y-1]){counter++;}
@@ -129,7 +130,7 @@ namespace GameofLife_2
                     if (Evo1[X-1,Y+1]){counter++;}
                     if (Evo1[X-1,Y]){counter++;}
                     if (Evo1[X-1,Y-1]){counter++;}
-                    if (counter>2)state=true;else state=false;break;
+                    if (counter==3)state=true;else state=false;break;
 
             }
             return state;
