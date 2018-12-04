@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace GameofLife_2
 {
@@ -10,7 +11,7 @@ namespace GameofLife_2
         static bool[,] Evo1=new bool[20,20];
         static bool[,] Evo2=new bool [20,20];
         
-        public static void DrawLife()
+        public async static void DrawLife()
         {
             FillRandomArray();
 
@@ -20,7 +21,7 @@ namespace GameofLife_2
             CheckSetCase();
 
             for (int i = 0; i < size_Y ; i++){
-                for (int j = 0; j < size_X; j++)
+                for (int j = 0; j < size_X ; j++)
                 {
                     if(Evo1[j,i]){
                        System.Console.Write(" # ");
@@ -32,6 +33,7 @@ namespace GameofLife_2
             }
             System.Console.Clear();
             System.Console.WriteLine("{0}-------------------------------------------------",n);
+            await Task.Delay(3000);
             n++;
             }
             Console.Read();
