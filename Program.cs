@@ -19,14 +19,14 @@ namespace GameofLife_2
             {
             CheckSetCase();
 
-            for (int i = 0; i < size_Y-1 ; i++){
-                for (int j = 0; j < size_X-1; j++)
+            for (int i = 0; i < size_Y ; i++){
+                for (int j = 0; j < size_X; j++)
                 {
                     if(Evo1[j,i]){
-                       System.Console.Write("#");
+                       System.Console.Write(" # ");
                     }
-                    else {System.Console.Write(" ");}
-                    if (j==size_X-2){System.Console.WriteLine("xxx");}
+                    else {System.Console.Write("   ");}
+                    if (j==size_X-1){System.Console.WriteLine("стр {0}",i);}
 
                 }
             }
